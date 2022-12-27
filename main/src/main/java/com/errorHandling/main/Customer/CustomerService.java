@@ -14,12 +14,22 @@ import java.util.Optional;
 public class CustomerService {
 
 
+
+    private String USER_ALREADY_EXISTS = "The user %s already exists";
     CustomerRepository customerRepository;
     PasswordEncoder passwordEncoder;
 
 
 
     public Customer addCustomer(Customer newCustomer){
+
+        //check if customer already exists
+
+        boolean customerAlreadyExists = customerRepository.findByEmail(newCustomer.getEmail()).isPresent();
+
+        if(customerAlreadyExists){
+            throw new IllegalStateException(String.format(USER_ALREADY_EXISTS, newCustomer.getEmail()));
+        }
 
         //TODO: encrypt the password
 
