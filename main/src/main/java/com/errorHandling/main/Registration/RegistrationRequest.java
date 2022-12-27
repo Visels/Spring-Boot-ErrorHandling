@@ -17,4 +17,21 @@ public class RegistrationRequest {
     private String firstName;
     private String lastName;
     private String password;
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
