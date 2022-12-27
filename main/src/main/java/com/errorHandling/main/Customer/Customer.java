@@ -1,9 +1,12 @@
 package com.errorHandling.main.Customer;
 
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
 public class Customer {
 
     @Id
@@ -25,5 +28,26 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public  void setPassword(String encodedPassword) {
+    this.password = encodedPassword;
     }
 }
