@@ -24,7 +24,7 @@ public class CustomerController {
     public ResponseEntity getCustomer (@PathVariable("id") String email) {
 
         Optional<Customer> foundCustomer = customerService.findCustomerByEmail(email);
-        
+
         return new ResponseEntity(foundCustomer, HttpStatus.OK);
 
 
