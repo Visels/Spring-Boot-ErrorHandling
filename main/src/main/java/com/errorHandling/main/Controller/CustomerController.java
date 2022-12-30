@@ -1,4 +1,4 @@
-package com.errorHandling.main;
+package com.errorHandling.main.Controller;
 
 
 import com.errorHandling.main.Customer.Customer;
