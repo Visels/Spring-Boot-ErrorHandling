@@ -23,7 +23,9 @@ public class ErrorResponse {
     }
 
 
-    public ErrorResponse(HttpStatus status){
+    public ErrorResponse(HttpStatus status, String message){
+        this();
+        this.message  = message;
         this.status = status;
     }
 

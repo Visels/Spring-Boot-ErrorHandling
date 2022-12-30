@@ -24,10 +24,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return null;
     }
 
+
+    //incorrect sql post response --> missing some certain value in the post request body
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public ResponseEntity<Object> handleSqlIntegrityConstraintViolationException(HttpServletRequest req, SQLIntegrityConstraintViolationException ex){
 
-
+        String error = "Unable to submit post request:" + ex.getMessage();
         return null;
     }
 
