@@ -17,8 +17,11 @@ public class CustomerService {
 
     private String USER_ALREADY_EXISTS = "The user %s already exists";
     CustomerRepository customerRepository;
-    PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
+    public CustomerService(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
 
     public Customer addCustomer(Customer newCustomer){
@@ -31,12 +34,9 @@ public class CustomerService {
             throw new IllegalStateException(String.format(USER_ALREADY_EXISTS, newCustomer.getEmail()));
         }
 
-        //TODO: encrypt the password
-
         String encodedPassword = passwordEncoder.encode(newCustomer.getPassword());
         newCustomer.setPassword(encodedPassword);
         customerRepository.save(newCustomer);
-
 
         return newCustomer;
     }
