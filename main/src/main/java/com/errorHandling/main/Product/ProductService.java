@@ -25,7 +25,7 @@ public class ProductService {
         if(!foundProduct.isPresent()){
             throw new IllegalStateException("product could not be found!");
         }
-        
+
         return foundProduct;
     }
 
