@@ -36,8 +36,8 @@ public class ProductController {
         return ResponseHandler.responseBuilder(
                 "product successfully added",
                 HttpStatus.OK,
-                productService.
-        )
+                productService.addProduct(product)
+        );
     }
 
 
