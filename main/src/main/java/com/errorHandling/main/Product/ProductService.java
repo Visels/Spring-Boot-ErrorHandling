@@ -20,9 +20,13 @@ public class ProductService {
     //find product by id
     public Optional<Product> findProduct(Long id){
 
+        Optional<Product> foundProduct = productRepository.findById(id);
 
-
-        return null;
+        if(!foundProduct.isPresent()){
+            throw new IllegalStateException("product could not be found!");
+        }
+        
+        return foundProduct;
     }
 
 
