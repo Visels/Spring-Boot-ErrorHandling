@@ -30,6 +30,22 @@ public class ProductService {
     }
 
 
+    //add product
+    public Product addProduct(Product newProduct){
+
+        Optional<Product> availableProduct = productRepository.findById(newProduct.getId());
+
+        if(availableProduct.isPresent()){
+            throw new IllegalStateException("Product already present");
+        }
+
+        //save the product
+        productRepository.save(newProduct);
+
+        return newProduct;
+    }
+
+
 
 
 }
