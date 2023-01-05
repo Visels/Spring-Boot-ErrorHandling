@@ -38,7 +38,7 @@ public class CustomerService {
 
         String encodedPassword = passwordEncoder.encode(newCustomer.getPassword());
         newCustomer.setPassword(encodedPassword);
-        customerRepository.save(newCustomer);
+        customerRepository.save(newCumystomer);
 
         return newCustomer;
     }
