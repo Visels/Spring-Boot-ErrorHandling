@@ -4,6 +4,7 @@ package com.errorHandling.main.Customer;
 import com.errorHandling.main.Security.PasswordEncoder;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -19,6 +20,7 @@ public class CustomerService {
     CustomerRepository customerRepository;
     private final PasswordEncoder passwordEncoder;
 
+    @Autowired
     public CustomerService(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
     }

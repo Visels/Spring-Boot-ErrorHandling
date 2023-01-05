@@ -9,11 +9,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @NoArgsConstructor
 public class PasswordEncoder {
 
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+     BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public PasswordEncoder(BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-    }
+//    public PasswordEncoder(BCryptPasswordEncoder bCryptPasswordEncoder) {
+//        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+//    }
 
     public String encode(String password){
 
